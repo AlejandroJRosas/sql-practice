@@ -14,6 +14,8 @@ FROM
   SELECT
     axl1.id_profesor,
     ac1.lapso,
+    ac1.cod_carrera,
+    ac1.cod_asigna,
     COUNT(ac1.id_est) AS total
   FROM 
     asignaturas_cursadas AS ac1,
@@ -31,6 +33,8 @@ FROM
   SELECT
     axl2.id_profesor,
     ac2.lapso,
+    ac2.cod_carrera,
+    ac2.cod_asigna,
     COUNT(CASE WHEN ac2.nota < 10 THEN 1 END) AS total
   FROM 
     asignaturas_cursadas AS ac2,
@@ -51,6 +55,10 @@ WHERE
   axl.id_profesor = p.id_profesor AND
   axl.lapso = crc.lapso AND
   axl.id_profesor = crc.id_profesor AND
+  axl.cod_carrera = crc.cod_carrera AND
+  axl.cod_asigna = crc.cod_asigna AND
   axl.lapso = cec.lapso AND
   axl.id_profesor = cec.id_profesor AND
+  axl.cod_carrera = cec.cod_carrera AND
+  axl.cod_asigna = cec.cod_asigna AND
   crc.total > (cec.total * 0.5);

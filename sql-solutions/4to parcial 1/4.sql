@@ -1,0 +1,1 @@
+-- d)	Insertar en una tabla los profesores  que han dictado asignaturas desde el 201015  en adelante, en  las carreras de “ingeniería” y cuyos total  de estudiantes reprobados en cada  lapso es mayor al 75% de los alumnos del curso. (cedula, apellidos, nombres, lapso, total de reprobados)
